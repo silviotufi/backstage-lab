@@ -143,13 +143,21 @@ integrations:
     #   apiBaseUrl: https://ghe.example.net/api/v3
     #   token: ${GHE_TOKEN}
 
-proxy:
   ### Example for how to add a proxy endpoint for the frontend.
   ### A typical reason to do this is to handle HTTPS and CORS for internal services.
   # endpoints:
   #   '/test':
   #     target: 'https://example.com'
   #     changeOrigin: true
+
+proxy:
+  endpoints:
+    '/netbox':
+      target: 'http://localhost:8000/api'
+      changeOrigin: true
+ #     credentials: dangerously-allow-unauthenticated
+      headers:
+        Authorization: 'Bearer ${NETBOX_TOKEN}'
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
