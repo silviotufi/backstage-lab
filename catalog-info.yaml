@@ -9,5 +9,5 @@ metadata:
   #   backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: john@example.com ##group:default/guests
+  owner: group:default/guests
   lifecycle: experimental
