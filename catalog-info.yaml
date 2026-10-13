@@ -1,5 +1,5 @@
-apiVersion: backstage.io/v1alpha1
-kind: Component
+apiVersion: backstage.io/v1alpha1   # version y formato
+kind: Component                     # tipo de componente
 metadata:
   name: backstage-lab
   description: An example of a Backstage application.
@@ -9,5 +9,5 @@ metadata:
   #   backstage.io/techdocs-ref: dir:.
 spec:
   type: website
-  owner: group:default/guests
+  owner: john@example.com ##group:default/guests
   lifecycle: experimental
