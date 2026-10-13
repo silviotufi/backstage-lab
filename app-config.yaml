@@ -150,14 +150,17 @@ integrations:
   #     target: 'https://example.com'
   #     changeOrigin: true
 
+
 proxy:
-  #0endpoints:
-  #  '/netbox':
- #     target: 'http://localhost:8000/api'
-  #    changeOrigin: true
- #     credentials: dangerously-allow-unauthenticated
-   #   headers:
-    #    Authorization: 'Bearer ${NETBOX_TOKEN}'
+  endpoints:
+    '/netbox':
+      target: 'http://localhost:8000/api'
+      changeOrigin: true
+      credentials: require
+      allowedMethods: ['GET']
+      headers:
+        Authorization: 'Bearer ${NETBOX_TOKEN}'
+
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
